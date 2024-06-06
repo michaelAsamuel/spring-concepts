@@ -1,8 +1,10 @@
 package com.empiricism.spring_concepts.depreciation;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class TechDepreciationCalculator implements DepreciationCalculator{
 
     /* Tech products like laptops are depreciated

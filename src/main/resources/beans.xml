@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="furnDepreciation" class="com.empiricism.spring_concepts.vanilla.DepreciationLooselyCoupled">
+        <!-- collaborators and configuration for this bean go here -->
+<!--        <constructor-arg ref="furnitureDepreciationCalculator"/>-->
+        <property name="depreciationCalculator" ref="furnitureDepreciationCalculator" />
+    </bean>
+
+    <bean id="techDepreciation" class="com.empiricism.spring_concepts.vanilla.DepreciationLooselyCoupled">
+        <!-- collaborators and configuration for this bean go here -->
+        <constructor-arg ref="techDepreciationCalculator"/>
+    </bean>
+
+    <bean id="furnitureDepreciationCalculator" class="com.empiricism.spring_concepts.depreciation.FurnitureDepreciationCalculator">
+    </bean>
+
+    <bean id="techDepreciationCalculator" class="com.empiricism.spring_concepts.depreciation.TechDepreciationCalculator">
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
